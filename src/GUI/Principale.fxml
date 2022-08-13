@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.CubicCurve?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="486.0" prefWidth="804.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUIController.PrincipaleController">
+   <children>
+      <StackPane fx:id="screen_container" layoutY="50.0" prefHeight="436.0" prefWidth="804.0" style="-fx-background-color: #DE561E;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0" />
+      <AnchorPane layoutX="332.0" layoutY="3.0" prefHeight="44.0" prefWidth="471.0" style="-fx-background-color: #fff;" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="3.0">
+         <children>
+            <GridPane hgap="10.0" layoutX="273.0" layoutY="7.0" AnchorPane.rightAnchor="8.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <JFXButton fx:id="btn_historique" buttonType="RAISED" prefHeight="29.0" prefWidth="90.0" style="-fx-background-color: #fff;" text="Produit" GridPane.columnIndex="1">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton fx:id="btn_facturation" buttonType="RAISED" focusTraversable="false" prefHeight="29.0" prefWidth="90.0" style="-fx-background-color: #5b846d;" text="Facturation" textFill="WHITE">
+                     <font>
+                        <Font name="Century Gothic Bold" size="11.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+      <Label layoutX="-1.0" layoutY="12.0" prefHeight="25.0" prefWidth="177.0" text="FACTURATION" AnchorPane.leftAnchor="-1.0">
+         <font>
+            <Font name="Century Gothic Bold" size="20.0" />
+         </font>
+      </Label>
+      <CubicCurve controlX1="-50.0" controlX2="50.0" controlY1="-100.0" controlY2="100.0" endX="150.0" fill="#5b846d" layoutX="151.0" layoutY="13.0" startX="-150.0" stroke="WHITE" />
+   </children>
+</AnchorPane>

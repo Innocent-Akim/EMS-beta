@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.CubicCurve?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="36.0" prefWidth="788.0" style="-fx-background-radius: 5px; -fx-background-color: Transparent;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUIControllers.loadProduitController">
+   <children>
+      <CubicCurve controlX1="-50.0" controlX2="50.0" controlY1="-100.0" controlY2="100.0" endX="150.0" fill="#72aadb52" layoutX="181.0" layoutY="-15.0" startX="-150.0" stroke="#5b846d00" />
+      <JFXButton fx:id="btndelete" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="558.0" layoutY="5.0" prefHeight="23.0" prefWidth="25.0" style="-fx-background-color: fff;" styleClass="cursor" text="Ajouter" textFill="WHITE" AnchorPane.rightAnchor="4.0">
+         <font>
+            <Font name="Century Gothic" size="1.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="#ff3333" glyphName="TRASH_ALT" size="18" />
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="modfierbtn" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="530.2656101200264" layoutY="5.0" prefHeight="23.0" prefWidth="25.0" ripplerFill="#e8e8e8" style="-fx-background-color: fff;" styleClass="cursor" text="Ajouter" textFill="WHITE" AnchorPane.rightAnchor="35.0">
+         <font>
+            <Font name="Century Gothic" size="1.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="#5b846d" glyphName="EDIT" size="18" text="" />
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Text fx:id="designation" layoutX="128.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BIELLETTE HILLUX SURF ET PRADO MBELE MUFUPI" wrappingWidth="302.4141850488959" AnchorPane.leftAnchor="128.0" AnchorPane.rightAnchor="358.0">
+         <font>
+            <Font name="Century Gothic Bold" size="13.0" />
+         </font>
+      </Text>
+      <Label layoutX="361.0" layoutY="2.0" prefHeight="15.0" prefWidth="63.0" text="Quantite" AnchorPane.rightAnchor="164.0">
+         <font>
+            <Font name="Segoe UI" size="12.0" />
+         </font></Label>
+      <Label layoutX="363.2656101200264" layoutY="18.0" prefHeight="17.0" prefWidth="63.0" text="Punitaire" AnchorPane.rightAnchor="164.0">
+         <font>
+            <Font name="Segoe UI" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="qte" layoutX="435.0" layoutY="3.0" prefHeight="19.0" prefWidth="50.0" text="2034" AnchorPane.rightAnchor="105.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="pu" layoutX="434.2656101200264" layoutY="16.0" prefHeight="20.0" prefWidth="50.0" text="1000" AnchorPane.rightAnchor="106.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="devise" layoutX="493.2656101200264" layoutY="20.0" style="-fx-background-color: #5b846d; -fx-background-radius: 5px;" text="USD" textFill="WHITE" AnchorPane.rightAnchor="76.0">
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+      </Label>
+      <Label layoutX="493.2656101200264" layoutY="2.0" style="-fx-background-color: red; -fx-background-radius: 5px;" text="MIN" textFill="WHITE" AnchorPane.rightAnchor="76.0">
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+      </Label>
+      <Label layoutX="-1.0" prefHeight="36.0" prefWidth="1.0" style="-fx-background-color: red;" AnchorPane.leftAnchor="0.0" />
+      <Label layoutX="588.0" prefHeight="36.0" prefWidth="1.0" style="-fx-background-color: green;" AnchorPane.rightAnchor="0.0" />
+      <Label fx:id="code" layoutX="106.0" layoutY="18.0" text="00" textFill="#ffffff00" />
+      <JFXButton fx:id="printBarcode" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="5.0" layoutY="6.0" prefHeight="23.0" prefWidth="25.0" ripplerFill="#e8e8e8" style="-fx-background-color: #fff;" styleClass="cursor" text="Ajouter" textFill="WHITE" AnchorPane.leftAnchor="3.0">
+         <font>
+            <Font name="Century Gothic" size="1.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <MaterialDesignIconView fill="#4e4e4e" glyphName="BARCODE_SCAN" size="20" />
+         </graphic>
+      </JFXButton>
+      <Label fx:id="barcode" layoutX="32.0" layoutY="9.0" prefHeight="17.0" prefWidth="87.0" text="2038436463" textFill="#5b846d" AnchorPane.leftAnchor="32.0">
+         <font>
+            <Font name="Century Gothic Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="dateLbl" layoutX="431.0" layoutY="9.0" prefHeight="17.0" prefWidth="125.0" text="2022-07-27 22:17:55" AnchorPane.leftAnchor="431.0">
+         <font>
+            <Font name="Century Gothic Bold" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

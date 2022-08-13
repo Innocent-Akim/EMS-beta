@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="MlinziFact.jnlp">
+  <information>
+    <title>MlinziFact</title>
+    <vendor>Vulembere by Mlinzi Corporation</vendor>
+    <description>MlinziFin est un système de gestion commerciale et administrative qui permet aux entreprises de gérer plus facilement leurs comptes et leurs activités.</description>
+    <offline-allowed/>
+  <shortcut><desktop/></shortcut>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="MlinziFact.jar" size="368309" download="eager" />
+    <jar href="lib\ResultSetToJson.jar" size="7875" download="eager" />
+    <jar href="lib\animatefx-1.2.0.jar" size="85823" download="eager" />
+    <jar href="lib\barbecue-1.5-beta1.jar" size="91079" download="eager" />
+    <jar href="lib\barcode4j-2.0.jar" size="256468" download="eager" />
+    <jar href="lib\commons-beanutils-1.8.0.jar" size="230690" download="eager" />
+    <jar href="lib\commons-collections-2.1.1.jar" size="175426" download="eager" />
+    <jar href="lib\commons-collections4-4.4.jar" size="751914" download="eager" />
+    <jar href="lib\commons-digester-2.1.jar" size="196768" download="eager" />
+    <jar href="lib\commons-logging-1.1.1.jar" size="60707" download="eager" />
+    <jar href="lib\controlsfx-8.40.11.jar" size="985420" download="eager" />
+    <jar href="lib\controlsfx-8.40.14.jar" size="1215643" download="eager" />
+    <jar href="lib\fontawesomefx-8.0.10_1.jar" size="108930" download="eager" />
+    <jar href="lib\fontawesomefx-glyphsbrowser-all-1.0.jar" size="1662483" download="eager" />
+    <jar href="lib\fxsampler-1.0.10.jar" size="30882" download="eager" />
+    <jar href="lib\groovy-all-2.0.1.jar" size="6191960" download="eager" />
+    <jar href="lib\ibatis.jar" size="450424" download="eager" />
+    <jar href="lib\icu4j-71.1.jar" size="13963762" download="eager" />
+    <jar href="lib\icu4j-localespi-71.1.jar" size="56317" download="eager" />
+    <jar href="lib\jackson-annotations-2.13.2.jar" size="75717" download="eager" />
+    <jar href="lib\jackson-core-2.13.2.jar" size="374739" download="eager" />
+    <jar href="lib\jackson-databind-2.13.2.2.jar" size="1535087" download="eager" />
+    <jar href="lib\jasperreports-6.12.2.jar" size="5534074" download="eager" />
+    <jar href="lib\java-jwt-3.17.0.jar" size="57183" download="eager" />
+    <jar href="lib\javafx-controls-19-ea+5.jar" size="306" download="eager" />
+    <jar href="lib\jdt-compiler.jar" size="943977" download="eager" />
+    <jar href="lib\jfoenix-8.0.7.jar" size="2631271" download="eager" />
+    <jar href="lib\jfoenix-9.0.10.jar" size="2432549" download="eager" />
+    <jar href="lib\jfoenix.jar" size="2142035" download="eager" />
+    <jar href="lib\json-20190722.jar" size="65003" download="eager" />
+    <jar href="lib\mybatis-3.5.3.jar" size="1703234" download="eager" />
+    <jar href="lib\mysql-connector-java-5.1.23-bin.jar" size="834126" download="eager" />
+    <jar href="lib\okhttp-3.9.0.jar" size="405733" download="eager" />
+    <jar href="lib\okio-1.13.0.jar" size="81811" download="eager" />
+    <jar href="lib\platform-3.5.1.jar" size="952411" download="eager" />
+    <jar href="lib\sqlite-jdbc-3.20.1.jar" size="6637455" download="eager" />
+    <jar href="lib\sqljdbc4-2.0.jar" size="466359" download="eager" />
+    <jar href="lib\tilesfx-1.5.2.jar" size="1365796" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="MlinziFact" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="mlinzifact.MlinziFact"  name="MlinziFact" />
+  <update check="always"/>
+</jnlp>

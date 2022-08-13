@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<StackPane fx:id="statckpan" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUIController.LOGINController">
+   <children>
+      <AnchorPane id="AnchorPane" prefHeight="401.0" prefWidth="657.0" style="-fx-background-color: white;">
+         <children>
+            <ImageView fitHeight="123.0" fitWidth="187.0" layoutX="14.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/JPG.jpg" />
+               </image>
+            </ImageView>
+            <Separator layoutX="329.0" layoutY="17.0" orientation="VERTICAL" prefHeight="359.0" prefWidth="4.0" />
+            <Label layoutX="345.0" layoutY="69.0" text="Login" textFill="#016833">
+               <font>
+                  <Font name="Verdana" size="32.0" />
+               </font>
+            </Label>
+            <Text fill="#5b846d" layoutX="347.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pour vous connecter au systeme veiller vous reseigner vous identifiants avant de continuer" wrappingWidth="271.47003173828125" />
+            <HBox layoutX="348.0" layoutY="169.0" prefHeight="34.0" prefWidth="301.0" spacing="5.0" style="-fx-background-color: #E8E8E8; -fx-background-radius: 5;">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefHeight="32.0" prefWidth="107.0" text="Psedo :">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtPsedo" prefHeight="30.0" prefWidth="213.0" style="-fx-background-color: white;">
+                     <HBox.margin>
+                        <Insets bottom="2.0" right="2.0" top="2.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="348.0" layoutY="218.0" prefHeight="34.0" prefWidth="301.0" style="-fx-background-color: #E8E8E8; -fx-background-radius: 5;">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefHeight="32.0" prefWidth="107.0" text="  Mot de passe : " textAlignment="RIGHT">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="txtPassword" prefHeight="30.0" prefWidth="205.0" style="-fx-background-color: white;">
+                     <HBox.margin>
+                        <Insets bottom="2.0" right="2.0" top="2.0" />
+                     </HBox.margin>
+                  </PasswordField>
+               </children>
+            </HBox>
+            <Button fx:id="BtnConnecter" layoutX="549.0" layoutY="273.0" mnemonicParsing="false" onAction="#seConnecter" prefHeight="25.0" prefWidth="94.0" style="-fx-background-color: #5b846d;" text="Se connecter" textFill="WHITE" />
+            <Hyperlink fx:id="btnCreateAccount" layoutX="351.0" layoutY="264.0" onAction="#CreateAccount" prefHeight="48.0" prefWidth="187.0" text="Vous n'avez pas de compte ? cliquez ici " textFill="#ff3939" underline="true" wrapText="true" />
+            <Button fx:id="btnDelete" layoutX="630.6666666666666" layoutY="-1.0" mnemonicParsing="false" onAction="#close" prefHeight="25.0" prefWidth="27.0" style="-fx-background-color: RED;" text="X" textFill="WHITE" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0" />
+            <Text fill="#333131" layoutX="14.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MlinziFin est un système de gestion commerciale et administrative qui permet aux entreprises de gérer plus facilement leurs comptes et leurs activités." wrappingWidth="301.33333333333326">
+               <font>
+                  <Font name="Verdana" size="12.0" />
+               </font>
+            </Text>
+            <Label layoutX="214.0" layoutY="155.0" text="FIN">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnConfig" layoutX="560.0" layoutY="-1.0" mnemonicParsing="false" onAction="#config" prefHeight="25.0" prefWidth="63.0" style="-fx-background-color: #016833;" text="Config" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

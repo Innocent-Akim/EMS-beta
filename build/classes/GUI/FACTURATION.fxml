@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="contenaire_home" prefHeight="475.0" prefWidth="804.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUIController.FACTURATIONController">
+   <children>
+      <AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="804.0" style="-fx-background-color: #F4F4F4;">
+         <children>
+            <AnchorPane prefHeight="44.0" prefWidth="804.0" style="-fx-background-color: #e2ebe6;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="6.0" layoutY="5.0" prefHeight="17.0" prefWidth="112.0" text="Facturation" textFill="#1d7d62">
+                     <font>
+                        <Font name="Verdana Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="433.0" layoutY="-86.0" prefHeight="44.0" prefWidth="529.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox alignment="TOP_RIGHT" layoutY="2.0" prefHeight="37.0" prefWidth="546.0" spacing="20.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0">
+                           <children>
+                              <ComboBox fx:id="txtEntrep" onAction="#selectEntrep" prefHeight="26.0" prefWidth="234.0" promptText="Sélectionner l'entreprise svp" style="-fx-background-color: WHITE;" />
+                              <DatePicker fx:id="txtDate" prefHeight="25.0" prefWidth="125.0" />
+                              <Label prefHeight="27.0" prefWidth="30.0" text="N ° :" textFill="#514343">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="txtNumero" alignment="CENTER" prefHeight="21.0" prefWidth="69.0" text="000" textAlignment="CENTER" textFill="#514343">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <VBox layoutX="227.0" layoutY="38.0" prefHeight="383.0" prefWidth="267.0" style="-fx-background-color: white; -fx-background-radius: 5;" AnchorPane.bottomAnchor="54.0" AnchorPane.leftAnchor="227.0" AnchorPane.rightAnchor="310.0" AnchorPane.topAnchor="38.0">
+               <children>
+                  <AnchorPane prefHeight="23.0" prefWidth="303.0">
+                     <children>
+                        <TextField fx:id="txtClient" layoutX="42.0" layoutY="2.0" prefHeight="25.0" prefWidth="219.0" promptText="Entrez le nom du client" style="-fx-background-color: #F4F4F4; -fx-background-radius: 5;" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="42.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="2.0">
+                           <font>
+                              <Font name="Century Gothic" size="13.0" />
+                           </font></TextField>
+                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="5.0" layoutY="1.0" prefHeight="26.0" prefWidth="31.0" style="-fx-background-color: white;" textFill="#ffffff00">
+                           <font>
+                              <Font name="Century Gothic" size="12.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView fill="#5b846d" glyphName="USER" />
+                           </graphic>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="29.0" prefWidth="242.0" style="-fx-background-color: white; -fx-background-radius: 5px;">
+                     <children>
+                        <TextField fx:id="txtSearchfacture" layoutX="43.0" layoutY="2.0" prefHeight="25.0" prefWidth="219.0" promptText="Rechercher ici" style="-fx-background-color: #F4F4F4; -fx-background-radius: 5;" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="43.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="2.0">
+                           <font>
+                              <Font name="Century Gothic" size="13.0" />
+                           </font></TextField>
+                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="5.0" layoutY="1.0" prefHeight="26.0" prefWidth="31.0" style="-fx-background-color: white;" textFill="#ffffff00">
+                           <graphic>
+                              <MaterialDesignIconView fill="#1d335a" glyphName="BARCODE_SCAN" size="15" />
+                           </graphic>
+                           <font>
+                              <Font name="Century Gothic" size="12.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+                  <ListView fx:id="liste_detaille" focusTraversable="false" style="-fx-background-color: white;" />
+               </children>
+            </VBox>
+            <AnchorPane layoutX="4.0" layoutY="38.0" prefHeight="409.0" prefWidth="210.0" style="-fx-background-color: white; -fx-background-radius: 5;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="38.0">
+               <children>
+                  <AnchorPane layoutX="5.0" layoutY="6.0" prefHeight="56.0" prefWidth="200.0" style="-fx-background-color: #e2ebe6; -fx-background-radius: 5;">
+                     <children>
+                        <Label fx:id="txtMontant" layoutX="6.0" layoutY="24.0" prefHeight="23.0" prefWidth="77.0" style="-fx-background-color: WHITE; -fx-background-radius: 5;" text="0.0" textFill="#08602e">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="7.0" layoutY="4.0" text="Montant" textFill="#0d5c2e" />
+                        <Label fx:id="txtLabDevise" layoutX="100.0" layoutY="23.0" prefHeight="23.0" prefWidth="86.0" style="-fx-background-color: white; -fx-background-radius: 5;" text=" ~" textFill="#08602e">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="100.0" layoutY="3.0" text="Devise" textFill="#0d5c2e" />
+                     </children>
+                  </AnchorPane>
+                  <VBox layoutX="5.0" layoutY="68.0" prefHeight="318.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <HBox prefHeight="34.0" prefWidth="200.0" spacing="5.0" style="-fx-background-color: #E8E8E8; -fx-background-radius: 5;">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" prefHeight="32.0" prefWidth="83.0" text="Montant cash :">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txtMontantCash" onKeyReleased="#convert" prefHeight="30.0" prefWidth="113.0" style="-fx-background-color: white;">
+                                 <HBox.margin>
+                                    <Insets bottom="2.0" right="2.0" top="2.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="34.0" prefWidth="200.0" spacing="5.0" style="-fx-background-color: #E8E8E8; -fx-background-radius: 5;">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="63.0" text="Devise : ">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="txtDevise" onAction="#Convert" prefHeight="29.0" prefWidth="149.0" style="-fx-background-color: WHITE;">
+                                 <HBox.margin>
+                                    <Insets bottom="3.0" right="3.0" top="2.0" />
+                                 </HBox.margin>
+                              </ComboBox>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="34.0" prefWidth="200.0" spacing="5.0" style="-fx-background-color: #E8E8E8; -fx-background-radius: 5;">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" prefHeight="32.0" prefWidth="83.0" text="Montant en : ">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="txtdefault_defaut" alignment="CENTER" prefHeight="32.0" prefWidth="45.0" text="~" textFill="#095139">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" prefHeight="32.0" prefWidth="9.0" text=":">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txtMontantConverti" prefHeight="30.0" prefWidth="93.0" style="-fx-background-color: white;">
+                                 <HBox.margin>
+                                    <Insets bottom="2.0" right="2.0" top="2.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="34.0" prefWidth="200.0" spacing="5.0" style="-fx-background-color: #E8E8E8; -fx-background-radius: 5;">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" prefHeight="32.0" prefWidth="83.0" text="Montant reste :">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txtMontantReste1" editable="false" prefHeight="30.0" prefWidth="113.0" style="-fx-background-color: white;">
+                                 <HBox.margin>
+                                    <Insets bottom="2.0" right="2.0" top="2.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="72.0" prefWidth="200.0" spacing="5.0" style="-fx-background-color: #E8E8E8; -fx-background-radius: 5;">
+                           <children>
+                              <TextArea fx:id="txtMontantTouteLettre" prefHeight="56.0" prefWidth="196.0" promptText="Montant en lettres" style="-fx-background-color: white;" wrapText="true">
+                                 <HBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                 </HBox.margin>
+                              </TextArea>
+                           </children>
+                        </HBox>
+                        <Button fx:id="btnPrint" mnemonicParsing="false" onAction="#Print" prefHeight="23.0" prefWidth="205.0" style="-fx-background-color: #5b846d;" text="Imprimer la facture" textFill="WHITE">
+                           <padding>
+                              <Insets bottom="2.0" right="2.0" top="2.0" />
+                           </padding>
+                        </Button>
+                        <Button fx:id="btnProformat" mnemonicParsing="false" onAction="#Proformat" prefHeight="23.0" prefWidth="205.0" style="-fx-background-color: #1D335A;" text="Imprimer proformat" textFill="WHITE">
+                           <padding>
+                              <Insets bottom="2.0" right="2.0" top="2.0" />
+                           </padding>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <Button fx:id="btnSynchro" layoutX="-19.0" layoutY="406.0" mnemonicParsing="false" onAction="#Synchronise" prefHeight="23.0" prefWidth="205.0" style="-fx-background-color: red;" text="Synchroniser les donnees" textFill="WHITE" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0">
+                     <padding>
+                        <Insets bottom="2.0" right="2.0" top="2.0" />
+                     </padding>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="613.0" layoutY="39.0" prefHeight="433.0" prefWidth="303.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="4.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="38.0">
+               <children>
+                  <HBox alignment="CENTER" layoutX="89.0" layoutY="48.0" prefHeight="27.0" prefWidth="248.0" spacing="5.0" style="-fx-background-color: #E8E8E8; -fx-background-radius: 5;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TextField fx:id="txtRecherche" onKeyReleased="#Rechercher" prefHeight="23.0" prefWidth="259.0" promptText="Rechercher ici" style="-fx-background-color: white;">
+                           <HBox.margin>
+                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                        </TextField>
+                        <Button fx:id="btnReload" alignment="CENTER" mnemonicParsing="false" onAction="#reload" prefHeight="17.0" prefWidth="77.0" style="-fx-background-color: #5b846d;" text="Actualiser" textFill="WHITE">
+                           <padding>
+                              <Insets bottom="2.0" right="2.0" top="2.0" />
+                           </padding>
+                           <font>
+                              <Font size="9.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets right="4.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <ListView fx:id="loadProduit" focusTraversable="false" layoutY="64.0" prefHeight="410.0" prefWidth="303.0" style="-fx-background-color: Transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="64.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ListView>
+            <AnchorPane layoutX="226.0" layoutY="422.0" prefHeight="48.0" prefWidth="139.0" style="-fx-background-color: #fff; -fx-background-radius: 7px; -fx-border-color: #A6A6A6; -fx-border-width: 0.25px; -fx-border-radius: 5px;" AnchorPane.bottomAnchor="5.0">
+               <children>
+                  <Text fill="#b6b6b6" layoutX="11.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: -text-color;" text="Quantité disponible" textAlignment="CENTER" wrappingWidth="112.00000637769699">
+                     <font>
+                        <Font name="Century Gothic Bold" size="11.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="quantitedispo" alignment="CENTER" layoutX="53.0" layoutY="19.0" text="0.0" textAlignment="CENTER" textFill="#1a4314">
+                     <font>
+                        <Font name="Century Gothic Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="368.0" layoutY="425.0" prefHeight="44.0" prefWidth="112.0" style="-fx-background-color: #fff; -fx-background-radius: 7px; -fx-border-color: #A6A6A6; -fx-border-width: 0.25px; -fx-border-radius: 5px;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="368.0">
+               <children>
+                  <Text fill="#b6b6b6" layoutX="11.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: -text-color;" text="Prix ​​unitaire" textAlignment="CENTER" wrappingWidth="112.00000637769699">
+                     <font>
+                        <Font name="Century Gothic Bold" size="11.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="punitaire" alignment="CENTER" layoutX="52.0" layoutY="24.0" text="0.0" textAlignment="CENTER" textFill="#1a4314">
+                     <font>
+                        <Font name="Century Gothic Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <JFXListView fx:id="loadClient" focusTraversable="false" layoutX="226.0" layoutY="67.0" prefHeight="351.0" prefWidth="347.0" style="-fx-background-color: Transparent;" AnchorPane.bottomAnchor="57.0" AnchorPane.leftAnchor="226.0" AnchorPane.topAnchor="67.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
