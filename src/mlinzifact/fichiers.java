@@ -185,7 +185,6 @@ public class fichiers {
         String date = LocalDateTime.now().toString();
         try {
             Writer fluxSortie = null;
-
             fluxSortie = new PrintWriter(new BufferedWriter(new FileWriter(
                     fichiers.ROOT + "dbsysteme_error_log.log")));
             fluxSortie.write(error + "__ Date : " + date + " >>MACHINE : " + Inet.getHosName() + " ERROR [[ " + lignes + " ]]\n");
