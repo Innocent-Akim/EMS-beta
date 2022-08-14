@@ -28,17 +28,17 @@ public class Preference {
     }
 
     public String getToken() {
-        return this.prefs.get("token","2022");
+        return this.prefs.get("token", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NjAzODQ2MTYsImV4cCI6MTY2MDk4OTQxNiwic3ViIjoiaHR0cHM6XC9cL3d3dy5tbGluemktYXBwLmNvbSIsImlkIjoiMTA5MjIwMDA5OTEwMDIiLCJwaG9uZSI6bnVsbH0.3YvhwGgjYqAMLvgulsXNRmZbM1_hbqumzBVO4MpSCDt-OJnOhjZ-p9F_UoG61dZFsmKezFTT7eJ30_KCqU5tSQ");
     }
-    
-     public String getHost() {
+
+    public String getHost() {
         return this.prefs.get("serv", "localhost");
     }
 
     public void setHost(String value) {
         this.prefs.put("serv", value);
     }
-    
+
     public String getUser() {
         return this.prefs.get("user", "root");
     }
@@ -46,7 +46,7 @@ public class Preference {
     public void setUser(String user) {
         this.prefs.put("user", user);
     }
-    
+
     public String getBd() {
         return this.prefs.get("bd", "mysql");
     }
@@ -54,7 +54,8 @@ public class Preference {
     public void setBd(String value) {
         this.prefs.put("bd", value);
     }
-     public String getPassword() {
+
+    public String getPassword() {
         return this.prefs.get("pass", "root");
     }
 

@@ -62,7 +62,7 @@ public class HistoriqueController implements Initializable {
     void initData() {
         try {
             loadList.getItems().clear();
-            ResultSet rs = Querry.getRs("SELECT * FROM `produit` where id_entrep=? limit 150", Vars.USER_ID_ENTREP);
+            ResultSet rs = Querry.getRs("SELECT * FROM `produit` where id_entrep=? limit 150", "2");
             while (rs.next()) {
                 loadProduitController.codeString = rs.getString("id");
                 loadProduitController.designationString = rs.getString("nom").toUpperCase();

@@ -64,12 +64,13 @@ public class synchro {
         JSONArray data = object.getJSONArray("data");
         for (int i = 0; i < data.length(); i++) {
             JSONObject ob = data.getJSONObject(i);
+            
             if (Querry.exist(table, ob.getString("id"))) {
                 Querry.execute("UPDATE `users` SET `psedo`=?,`password_`=?,`etat`=? where id=?",
                         ob.getString("psedo"), ob.getString("password"), ob.getString("etat"), ob.getString("id"));
             } else {
-                Querry.execute("INSERT INTO `users` SET `id`=?,`psedo`=?,`password_`=?,`etat`=?",
-                        ob.getString("id"), ob.getString("psedo"), ob.getString("password"), ob.getString("etat"));
+                Querry.execute("INSERT INTO `users` SET `id`=?,`psedo`=?,`password_`=?,`etat`=?,id_entrep=?",
+                        ob.getString("id"), ob.getString("psedo"), ob.getString("password"), ob.getString("etat"), ob.getString("id_entre"));
             }
         }
     }

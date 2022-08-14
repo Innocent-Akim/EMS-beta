@@ -182,8 +182,7 @@ public class Facturation {
     public static void saveDetailles(String idOperation) {
 
         for (int i = 0; i < LIST_VENTE_PRODUIT.size(); i++) {
-        System.out.println("OPERATION------------------------------> "+LIST_VENTE_ID.get(i));
-         boolean bool=   Querry.execute("INSERT INTO `operation_detaille` SET `id`=?,`id_operation`=?,`id_produit`=?,`qte`=?,`prix`=? ,`id_entrep`=?,`barcode`=?",
+     Querry.execute("INSERT INTO `operation_detaille` SET `id`=?,`id_operation`=?,`id_produit`=?,`qte`=?,`prix`=? ,`id_entrep`=?,`barcode`=?",
                     Querry.getId(), idOperation, LIST_VENTE_ID.get(i), LIST_VENTE_QTE.get(i).toString(), LIST_VENTE_PU.get(i).toString(), Vars.USER_ID_ENTREP, LIST_BARCODE.get(i));
 
         }

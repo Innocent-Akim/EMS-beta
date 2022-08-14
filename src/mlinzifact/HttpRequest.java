@@ -25,7 +25,7 @@ public class HttpRequest {
 
     public static String token_ = "";
     public static String message;
-    public static String URLBase = "https://ems.databankrdc.com/api"; 
+    public static String URLBase = "https://ems-app.databankrdc.com/api"; 
 
     public static int statut;
 
@@ -44,7 +44,6 @@ public class HttpRequest {
         } else {
             token_ = token;
         }
-
         try {
             RequestBody body = null;
             if (json != null) {

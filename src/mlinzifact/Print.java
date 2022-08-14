@@ -1,15 +1,9 @@
 package mlinzifact;
 
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXDialog;
-import com.jfoenix.controls.JFXDialogLayout;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.HashMap;
 import java.util.Map;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import static mlinzifact.dbo.Con;
@@ -36,9 +30,10 @@ public class Print {
             g.setQuery(gn);
             JasperReport f1 = JasperCompileManager.compileReport(g);
             a = JasperFillManager.fillReport(f1, null, Con());
-                JasperPrintManager.printReport(a, true);
-                  JasperViewer view = new JasperViewer(a, false);
-//            JasperPrintManager.printReport(a, true);
+            JasperViewer.viewReport(a, false);
+//                JasperPrintManager.printReport(a, true);
+//                  JasperViewer view = new JasperViewer(a, false);
+            JasperPrintManager.printReport(a, true);
 
         } catch (JRException ex) {
             System.out.println(ex.getMessage());
