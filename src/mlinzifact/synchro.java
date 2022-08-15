@@ -32,7 +32,8 @@ public class synchro {
                             synchro.synchloadcomptes();
                             synchro.synchUsers();
                             synchro.synchEntreprise();
-                            synchro.synchroOperations();
+                            synchro.synchroOperations_detailles();
+//                            synchro.synchroOperations();
                         }
                         return null;
                     }
@@ -64,7 +65,7 @@ public class synchro {
         JSONArray data = object.getJSONArray("data");
         for (int i = 0; i < data.length(); i++) {
             JSONObject ob = data.getJSONObject(i);
-            
+
             if (Querry.exist(table, ob.getString("id"))) {
                 Querry.execute("UPDATE `users` SET `psedo`=?,`password_`=?,`etat`=? where id=?",
                         ob.getString("psedo"), ob.getString("password"), ob.getString("etat"), ob.getString("id"));
@@ -142,6 +143,7 @@ public class synchro {
     public static void synchroOperations() {
         JSONArray array = Tables.get(dbo.Con(), "SELECT * FROM `operation` Where synchro=0");
         for (int i = 0; i < array.length(); i++) {
+            System.out.println("=====================================>" + array);
             JSONObject ob = array.getJSONObject(i);
             JSONObject object = HttpRequest.getHttpReqest("/operations-setOperation", "POST", ob, null);
             if (HttpRequest.statut == 200) {

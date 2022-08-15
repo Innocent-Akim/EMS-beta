@@ -53,7 +53,7 @@ public class Facturation {
 //        removeList(LIST_BARCODE, LIST_ID, LIST_PRODUIT, LIST_PRIX, LIST_NUMERO, LIST_QUANTITE);
         try {
             removeAll();
-            ResultSet rs = Querry.getRs("SELECT * FROM `produit` where id_entrep=?", id_entrep);
+            ResultSet rs = Querry.getRs("SELECT * FROM `produit` where  qte>0 AND id_entrep=?", id_entrep);
             int x = 1;
             while (rs.next()) {
                 LIST_NUMERO.add(x + "");
@@ -123,14 +123,9 @@ public class Facturation {
 
     public static void addFact(String produit, String id, float prix, float qte_) {
         if (LIST_VENTE_PRODUIT.contains(produit.toUpperCase())) {
-
             int index = LIST_VENTE_PRODUIT.indexOf(produit);
             float pu = LIST_VENTE_PU.get(index);
-
             float qte = LIST_VENTE_QTE.get(index) + qte_;
-
-            System.out.println(pu + "###" + prix);
-
             if (pu == prix) {
                 LIST_VENTE_QTE.set(index, qte);
             } else {
@@ -182,14 +177,26 @@ public class Facturation {
     public static void saveDetailles(String idOperation) {
 
         for (int i = 0; i < LIST_VENTE_PRODUIT.size(); i++) {
-     Querry.execute("INSERT INTO `operation_detaille` SET `id`=?,`id_operation`=?,`id_produit`=?,`qte`=?,`prix`=? ,`id_entrep`=?,`barcode`=?",
+
+            boolean bool = Querry.execute("INSERT INTO `operation_detaille` SET `id`=?,`id_operation`=?,`id_produit`=?,`qte`=?,`prix`=? ,`id_entrep`=?,`barcode`=?",
                     Querry.getId(), idOperation, LIST_VENTE_ID.get(i), LIST_VENTE_QTE.get(i).toString(), LIST_VENTE_PU.get(i).toString(), Vars.USER_ID_ENTREP, LIST_BARCODE.get(i));
+            if (bool) {
+                try {
+                    ResultSet rs = Querry.getRs("SELECT qte FROM produit WHERE id='" + LIST_VENTE_ID.get(i) + "'");
+                    if (rs.next()) {
+                        float qte = (rs.getFloat("qte") - Float.parseFloat(LIST_VENTE_QTE.get(i).toString()));
+                        Querry.execute("UPDATE produit SET qte=? WHERE id='" + LIST_VENTE_ID.get(i) + "'", String.valueOf(qte));
+                    }
+                } catch (SQLException ex) {
+                    Logger.getLogger(Facturation.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
 
         }
     }
 
     public static void saveID(String entreprise) {
-        String code = Querry.getLastId("enteteFacture");
+        String code = Querry.getLastId("enteteFacture WHERE id_entrep='" + entreprise + "'");
         Querry.execute("INSERT INTO enteteFacture VALUES(?,?) ", code, entreprise);
     }
     public static Facturation fact = new Facturation();

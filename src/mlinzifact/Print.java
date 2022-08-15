@@ -24,13 +24,14 @@ public class Print {
 //        System.err.println(requete);
         JasperPrint a = null;
         try {
+            System.out.println(fichiers.CreadFolder(null) + cheminJasper + ".jrxml");
             JasperDesign g = JRXmlLoader.load(fichiers.CreadFolder(null) + cheminJasper + ".jrxml");
             JRDesignQuery gn = new JRDesignQuery();
             gn.setText(requete);
             g.setQuery(gn);
             JasperReport f1 = JasperCompileManager.compileReport(g);
             a = JasperFillManager.fillReport(f1, null, Con());
-            JasperViewer.viewReport(a, false);
+            JasperViewer.viewReport(a, true);
 //                JasperPrintManager.printReport(a, true);
 //                  JasperViewer view = new JasperViewer(a, false);
             JasperPrintManager.printReport(a, true);

@@ -136,7 +136,7 @@ public class FACTURATIONController implements Initializable {
                     numero = Querry.getIdFacture("enteteFacture");
                     txtNumero.setText(numero.trim());
                 }
-                ResultSet rs = Querry.getData("SELECT * FROM `produit` WHERE barcode= '" + txtSearchfacture.getText().trim() + "' OR nom= '" + txtSearchfacture.getText().trim() + "' AND id_entrep='" + Vars.USER_ID_ENTREP + "' ORDER BY nom DESC");
+                ResultSet rs = Querry.getData("SELECT * FROM `produit` WHERE qte>0 AND barcode= '" + txtSearchfacture.getText().trim() + "' OR nom= '" + txtSearchfacture.getText().trim() + "' AND id_entrep='" + Vars.USER_ID_ENTREP + "' ORDER BY nom DESC");
                 if (rs.next()) {
                     Facturation.addFact(rs.getString("nom").toUpperCase(), rs.getString("id"), Float.valueOf(rs.getString("prix_max")), 1);
                     quantitedispo.setText(rs.getString("qte"));
@@ -156,7 +156,7 @@ public class FACTURATIONController implements Initializable {
                     txtNumero.setText(numero.trim());
                 }
                 String barcode = loadProduit.getSelectionModel().getSelectedItem().toString().trim();
-                ResultSet rs = Querry.getData("SELECT * FROM `produit` WHERE barcode='" + barcode.substring(barcode.indexOf("||") + 2) + "' AND id_entrep='" + Vars.USER_ID_ENTREP + "' ORDER BY nom DESC");
+                ResultSet rs = Querry.getData("SELECT * FROM `produit` WHERE qte>0 AND barcode='" + barcode.substring(barcode.indexOf("||") + 2) + "' AND id_entrep='" + Vars.USER_ID_ENTREP + "' ORDER BY nom DESC");
                 if (rs.next()) {
                     Facturation.addFact(rs.getString("nom").toUpperCase(), rs.getString("id"), Float.valueOf(rs.getString("prix_max")), 1);
                     quantitedispo.setText(rs.getString("qte"));
@@ -300,8 +300,8 @@ public class FACTURATIONController implements Initializable {
         quantitedispo.setText("0.0");
         punitaire.setText("0.0");
         synchro.start();
-//        Facturation.removeAll();
-//      Facturation.fact.loadDetailleFact(liste_detaille_);
+        Facturation.removeAll();
+      Facturation.fact.loadDetailleFact(liste_detaille_);
     }
 
     @FXML
